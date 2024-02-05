@@ -5,8 +5,22 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      width: {
+        
+      }
+    },
+    screens: {
+      'xs': '320px',
+      'sm': '540px', 
+      'md': '720px',
+      'lg': '920px',
+      'xl': '1040px',
+      '2xl':'1460px'
+    },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar')({ nocompatible: true }),
+  ],
 }
 

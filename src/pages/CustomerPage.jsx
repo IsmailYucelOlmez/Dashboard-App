@@ -2,8 +2,8 @@ import React from 'react'
 
 const CustomerPage = () => {
   return (
-    <div>
-      
+    <div className=''>
+      customer
     </div>
   )
 }
