@@ -1,6 +1,3 @@
-import { Fragment, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './components/Navbar'
 import { Route, Routes } from 'react-router-dom'
@@ -20,15 +17,18 @@ import AreaGraphicPage from './pages/AreaGraphicPage'
 import FinancialChartPage from './pages/FinancialChartPage'
 import PyramidChartPage from './pages/PyramidChartPage'
 import StackedChartPage from './pages/StackedChartPage'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 
 function App() {
 
   //google font
   //color palette
-  //logo and other icons
+  //white logo (react icon avaliable)
   //redux state
   //<Route path="/product/:id" element={""}/>  product detail page ?
+  //clear data folder and dummy.js
 
   return (
     <div className="flex">
@@ -38,6 +38,9 @@ function App() {
       <Navbar/>
 
       <div className='w-4/5 bg-[#FAF7FF]'>
+
+        <Header/>
+
       <Routes>
 
         <Route path="/" element={<HomePage/>}/>
@@ -59,6 +62,8 @@ function App() {
 
 
       </Routes>
+
+        <Footer/>
       
       </div>
 
