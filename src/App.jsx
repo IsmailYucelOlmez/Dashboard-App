@@ -1,5 +1,4 @@
 import './App.css'
-import Navbar from './components/Navbar'
 import { Route, Routes } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import CustomerPage from './pages/CustomerPage'
@@ -17,8 +16,9 @@ import AreaGraphicPage from './pages/AreaGraphicPage'
 import FinancialChartPage from './pages/FinancialChartPage'
 import PyramidChartPage from './pages/PyramidChartPage'
 import StackedChartPage from './pages/StackedChartPage'
-import Header from './components/Header'
 import Footer from './components/Footer'
+import Sidebar from './components/Sidebar'
+import Navbar from './components/Navbar'
 
 
 function App() {
@@ -26,7 +26,6 @@ function App() {
   //google font
   //color palette
   //white logo (react icon avaliable)
-  //redux state
   //<Route path="/product/:id" element={""}/>  product detail page ?
   //clear data folder and dummy.js
 
@@ -35,11 +34,11 @@ function App() {
 
      
 
-      <Navbar/>
+      <Sidebar/>
 
       <div className='w-4/5 bg-[#FAF7FF]'>
 
-        <Header/>
+        <Navbar/>
 
       <Routes>
 
