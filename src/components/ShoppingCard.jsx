@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Messages = () => {
+const ShoppingCard = () => {
   return (
     <div className='absolute'>
       
@@ -8,4 +8,4 @@ const Messages = () => {
   )
 }
 
-export default Messages
+export default ShoppingCard

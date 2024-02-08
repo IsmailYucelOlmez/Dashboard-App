@@ -4,7 +4,7 @@ import { ReactSVG } from 'react-svg'
 import Logo from '../assets/dashboard-logo.svg'
 import { GiLouvrePyramid } from "react-icons/gi";
 import { BsKanban } from 'react-icons/bs';
-import { AiOutlineShoppingCart, AiOutlineBarChart } from 'react-icons/ai';
+import { AiOutlineBarChart } from 'react-icons/ai';
 import { RiContactsLine } from 'react-icons/ri';
 import { IoMdContacts } from 'react-icons/io';
 import { FaProductHunt } from "react-icons/fa";
@@ -34,7 +34,7 @@ const Sidebar = () => {
         <NavLink to={"/customer"} className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `text-xl font-semibold text-white bg-[${themeColor}] ` : 'text-lg hover:bg-slate-200'}`} > <RiContactsLine /> Customer</NavLink>
         <NavLink to={"/personel"} className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `text-xl font-semibold text-white bg-[${themeColor}] ` : 'text-lg hover:bg-slate-200'}`} > <IoMdContacts /> Employees</NavLink>
         <NavLink to={"/product"} className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `text-xl font-semibold text-white bg-[${themeColor}] ` : 'text-lg hover:bg-slate-200'}`} > <FaProductHunt /> Product</NavLink>
-        <NavLink to={"/order"} className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `text-xl font-semibold text-white bg-[${themeColor}] ` : 'text-lg hover:bg-slate-200'}`} > <AiOutlineShoppingCart /> Order</NavLink>
+        <NavLink to={"/order"} className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `text-xl font-semibold text-white bg-[${themeColor}] ` : 'text-lg hover:bg-slate-200'}`} > <i class="fa-solid fa-cart-shopping"></i> Order</NavLink>
         <NavLink to={"/calendar"} className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `text-xl font-semibold text-white bg-[${themeColor}] ` : 'text-lg hover:bg-slate-200'}`} > <i class="fa-solid fa-calendar"></i> Calendar</NavLink>
         <NavLink to={"/kanban"} className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `text-xl font-semibold text-white bg-[${themeColor}] ` : 'text-lg hover:bg-slate-200'}`} > <BsKanban /> Kanban</NavLink>
         <NavLink to={"/line-graphic"} className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `text-xl font-semibold text-white bg-[${themeColor}] ` : 'text-lg hover:bg-slate-200'}`} > <i class="fa-solid fa-chart-line"></i> Line</NavLink>
