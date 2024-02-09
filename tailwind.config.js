@@ -11,6 +11,10 @@ export default {
       },
       backgroundImage:{
         'hero-banner':"url('/src/assets/dashboard-hero-section.svg')",
+      },
+      fontFamily:{
+        'oswald': ['Oswald', 'sans-serif'],
+        'ubuntu': ['Ubuntu', 'sans-serif']
       }
     },
     screens: {
