@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { ReactSVG } from 'react-svg'
 import Logo from '../assets/dashboard-logo.svg'
@@ -10,17 +10,20 @@ import { IoMdContacts } from 'react-icons/io';
 import { FaProductHunt } from "react-icons/fa";
 import { MdSunny } from "react-icons/md";
 import { FaMoon } from "react-icons/fa";
+import { DashboardContext } from '../context/DashboardContext';
+
 
 
 const Sidebar = () => {
 
   const [settings, setSettings]=useState(false);
   const [theme,setTheme]=useState("light");
-  const [themeColor,setThemeColor]=useState("#00BCD4");
-  //settings section
+  const {themeColor}=useContext(DashboardContext);
+  const {setThemeColor}=useContext(DashboardContext);
+  
 
   return (
-    <div className='bg-[#fff] w-1/5 h-screen py-8 overflow-y-auto text-black scrollbar-thin scrollbar-thumb-slate-400 scrollbar-track-white scrollbar-thumb-rounded-xl'>
+    <div className='bg-[#fff] w-1/5 h-screen py-8 overflow-y-auto text-black scrollbar-none hover:scrollbar-thin scrollbar-thumb-slate-400 scrollbar-track-white scrollbar-thumb-rounded-xl'>
 
       <Link to={"/"} className='flex justify-center items-center gap-3'>
         <ReactSVG src={Logo}/>

@@ -8,6 +8,9 @@ export default {
     extend: {
       width: {
         
+      },
+      backgroundImage:{
+        'hero-banner':"url('/src/assets/dashboard-hero-section.svg')",
       }
     },
     screens: {

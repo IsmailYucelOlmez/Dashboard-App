@@ -4,10 +4,10 @@ import Avatar from '../../data/avatar.jpg'
 import Badge from '@mui/material/Badge';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { FaCartShopping } from "react-icons/fa6";
-import Notification from './Notification'
-import Messages from './Messages';
-import ShoppingCard from './ShoppingCard';
-import UserProfile from './UserProfile';
+import Notification from './dropdown/Notification'
+import Messages from './dropdown/Messages';
+import ShoppingCard from './dropdown/ShoppingCard';
+import UserProfile from './dropdown/UserProfile';
 
 const Navbar = () => {
 

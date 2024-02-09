@@ -30,13 +30,13 @@ function App() {
   //clear data folder and dummy.js
 
   return (
-    <div className="flex">
+    <div className=" flex ">
 
      
 
       <Sidebar/>
 
-      <div className='w-4/5 bg-[#FAF7FF]'>
+      <div className='w-4/5 bg-[#FAF7FF] h-screen overflow-y-auto scrollbar-thin scrollbar-thumb-slate-400 scrollbar-track-white scrollbar-thumb-rounded-xl'>
 
         <Navbar/>
 
