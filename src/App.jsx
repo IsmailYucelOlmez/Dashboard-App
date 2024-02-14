@@ -23,7 +23,6 @@ import Navbar from './components/Navbar'
 
 function App() {
 
-  
   //color palette
   //white logo (react icon avaliable)
   //<Route path="/product/:id" element={""}/>  product detail page ?
