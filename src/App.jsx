@@ -27,6 +27,8 @@ function App() {
   //white logo (react icon avaliable)
   //dropdown
   //product page
+  //dark theme
+  //responsive design
 
   return (
     <div className=" flex ">

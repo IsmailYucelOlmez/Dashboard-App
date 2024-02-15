@@ -22,7 +22,7 @@ const Navbar = () => {
         <i className={`xs:block lg:hidden text-xl fa-solid ${!mobileMenu ? 'fa-bars' :'fa-x'}`}></i>
         <div className='flex gap-2 items-center'>
         <input type="text" className='border border-black outline-none px-2 py-1 rounded-xl' placeholder='Search...'/>
-        <i class="text-lg fa-solid fa-magnifying-glass cursor-pointer"></i>
+        <i className="text-lg fa-solid fa-magnifying-glass cursor-pointer"></i>
         </div>
 
       </div>
@@ -38,17 +38,17 @@ const Navbar = () => {
         
 
         <Badge color="primary" badgeContent={2} max={9}>
-          <i onClick={()=>{activeMenu=="message" ? setActiveMenu(""):setActiveMenu("message")}} class={`text-xl ${activeMenu=="message" ?'fa-solid':'fa-regular'} fa-message`}></i>
+          <i onClick={()=>{activeMenu=="message" ? setActiveMenu(""):setActiveMenu("message")}} className={`text-xl ${activeMenu=="message" ?'fa-solid':'fa-regular'} fa-message`}></i>
         </Badge>
         
         <Badge color="primary" badgeContent={1} max={9}>
-          <i onClick={()=>{activeMenu=="notification" ? setActiveMenu(""):setActiveMenu("notification")}} class={`text-xl ${activeMenu=="notification" ?'fa-solid':'fa-regular'} fa-bell`}></i>
+          <i onClick={()=>{activeMenu=="notification" ? setActiveMenu(""):setActiveMenu("notification")}} className={`text-xl ${activeMenu=="notification" ?'fa-solid':'fa-regular'} fa-bell`}></i>
         </Badge>
 
         <div className='flex items-center gap-2'>
           <Image src={Avatar} className={"w-11 h-11 rounded-full"}/>
           <p className='font-semibold'>Micheal</p>
-          <i onClick={()=>{activeMenu=="profile" ? setActiveMenu(""):setActiveMenu("profile")}} class="fa-solid fa-chevron-down"></i>
+          <i onClick={()=>{activeMenu=="profile" ? setActiveMenu(""):setActiveMenu("profile")}} className="fa-solid fa-chevron-down"></i>
         </div>
 
         {activeMenu=="shop" &&(
