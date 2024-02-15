@@ -62,9 +62,9 @@ export const kanbanGrid = [
     allowToggle: true },
 ];
 const gridEmployeeProfile = (props) => (
-  <div className="flex items-center gap-2">
+  <div className="flex items-center gap-4">
     <img
-      className="rounded-full w-10 h-10"
+      className="rounded-full w-16 h-16"
       src={props.EmployeeImage}
       alt="employee"
     />
@@ -121,13 +121,13 @@ export const EditorData = () => (
   </div>
 );
 const customerGridImage = (props) => (
-  <div className="image flex gap-4">
+  <div className="image flex gap-4 items-center">
     <img
-      className="rounded-full w-10 h-10"
+      className="rounded-full w-16 h-16"
       src={props.CustomerImage}
       alt="employee"
     />
-    <div>
+    <div className='flex flex-col gap-2'>
       <p>{props.CustomerName}</p>
       <p>{props.CustomerEmail}</p>
     </div>
@@ -394,7 +394,7 @@ export const LinePrimaryYAxis = {
 export const customersGrid = [
   { type: 'checkbox', width: '50' },
   { headerText: 'Name',
-    width: '150',
+    width: '240',
     template: customerGridImage,
     textAlign: 'Center' },
   { field: 'ProjectName',
@@ -410,7 +410,7 @@ export const customersGrid = [
   {
     field: 'Weeks',
     headerText: 'Weeks',
-    width: '100',
+    width: '80',
     format: 'C2',
     textAlign: 'Center' },
   { field: 'Budget',
@@ -421,12 +421,12 @@ export const customersGrid = [
 
   { field: 'Location',
     headerText: 'Location',
-    width: '150',
+    width: '100',
     textAlign: 'Center' },
 
   { field: 'CustomerID',
     headerText: 'Customer ID',
-    width: '120',
+    width: '100',
     textAlign: 'Center',
     isPrimaryKey: true,
   },
@@ -435,7 +435,7 @@ export const customersGrid = [
 
 export const employeesGrid = [
   { headerText: 'Employee',
-    width: '150',
+    width: '185',
     template: gridEmployeeProfile,
     textAlign: 'Center' },
   { field: 'Name',
@@ -449,7 +449,7 @@ export const employeesGrid = [
     textAlign: 'Center',
   },
   { headerText: 'Country',
-    width: '120',
+    width: '80',
     textAlign: 'Center',
     template: gridEmployeeCountry },
 
@@ -465,7 +465,7 @@ export const employeesGrid = [
     textAlign: 'Center' },
   { field: 'EmployeeID',
     headerText: 'Employee ID',
-    width: '125',
+    width: '80',
     textAlign: 'Center' },
 ];
 

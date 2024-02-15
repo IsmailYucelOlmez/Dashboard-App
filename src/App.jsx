@@ -25,8 +25,8 @@ function App() {
 
   //color palette
   //white logo (react icon avaliable)
-  //<Route path="/product/:id" element={""}/>  product detail page ?
-  //clear data folder and dummy.js
+  //dropdown
+  //product page
 
   return (
     <div className=" flex ">
