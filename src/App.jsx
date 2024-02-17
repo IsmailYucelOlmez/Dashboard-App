@@ -23,12 +23,12 @@ import Navbar from './components/Navbar'
 
 function App() {
 
-  //color palette
   //white logo (react icon avaliable)
   //dropdown
   //product page
   //dark theme
-  //responsive design
+  //local storage for dark theme and theme color 
+  //responsive design  
 
   return (
     <div className=" flex ">

@@ -13,7 +13,7 @@ const Navbar = () => {
 
   const [activeMenu,setActiveMenu]=useState("");
   const mobileMenu=false;
-  //when clicked icons filled
+  
 
   return (
     <div className='flex justify-between px-10 items-center border-b-2 border-black h-16 relative'>
