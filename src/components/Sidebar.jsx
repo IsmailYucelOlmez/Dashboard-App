@@ -18,6 +18,7 @@ const Sidebar = () => {
 
   const [settings, setSettings]=useState(false);
   const {mobileMenu}=useContext(DashboardContext);
+  const {setMobileMenu}=useContext(DashboardContext);
   const {theme}=useContext(DashboardContext);
   const {setTheme}=useContext(DashboardContext);
   const {themeColor}=useContext(DashboardContext);
@@ -25,7 +26,9 @@ const Sidebar = () => {
   
 
   return (
-    <div className={`bg-[#fff] ${!mobileMenu ? 'xs:hidden':'xs:block'} lg:block w-1/5 h-screen py-8 overflow-y-auto text-black scrollbar-none hover:scrollbar-thin scrollbar-thumb-slate-400 scrollbar-track-white scrollbar-thumb-rounded-xl`}>
+
+    <div onClick={()=>setMobileMenu(false)} className={`${mobileMenu ? 'xs:w-full':'xs:w-0'} h-full xs:absolute lg:relative lg:w-1/5`}>
+    <div className={`bg-[#fff] ${!mobileMenu ? 'xs:hidden':'xs:block'} lg:block xs:w-1/2 md:w-1/3 lg:w-full z-20 xs:absolute top-0 left-0  h-screen py-8 overflow-y-auto text-black scrollbar-none hover:scrollbar-thin scrollbar-thumb-slate-400 scrollbar-track-white scrollbar-thumb-rounded-xl`}>
 
       <Link to={"/"} className='flex justify-center items-center gap-3'>
         <ReactSVG src={Logo}/>
@@ -87,7 +90,18 @@ const Sidebar = () => {
 
       </div>
     )}
+
+    {mobileMenu && (
+      <div className='absolute xs:block lg:hidden w-full h-screen'>
+
+        <nav className='w-1/3 h-full'>
+
+        </nav>
+
+      </div>
+    )}
       
+    </div>
     </div>
   )
 }

@@ -98,7 +98,7 @@ const HomePage = () => {
 
             <SparkLine currentColor={themeColor} id="line-sparkLine" type="Line" height="80px" width="250px" data={SparklineAreaData} color={themeColor}/>
 
-            <button className={` mt-8 p-2 bg-[${themeColor}] text-white rounded-lg`}>Download Report</button>  
+            <button className={` mt-8 p-2 bg-[${themeColor}] text-white xs:text-sm lg:text-base rounded-lg`}>Download Report</button>  
             
 
           </div>
