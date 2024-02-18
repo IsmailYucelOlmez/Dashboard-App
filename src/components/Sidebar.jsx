@@ -17,13 +17,15 @@ import { DashboardContext } from '../context/DashboardContext';
 const Sidebar = () => {
 
   const [settings, setSettings]=useState(false);
-  const [theme,setTheme]=useState("light");
+  const {mobileMenu}=useContext(DashboardContext);
+  const {theme}=useContext(DashboardContext);
+  const {setTheme}=useContext(DashboardContext);
   const {themeColor}=useContext(DashboardContext);
   const {setThemeColor}=useContext(DashboardContext);
   
 
   return (
-    <div className='bg-[#fff] w-1/5 h-screen py-8 overflow-y-auto text-black scrollbar-none hover:scrollbar-thin scrollbar-thumb-slate-400 scrollbar-track-white scrollbar-thumb-rounded-xl'>
+    <div className={`bg-[#fff] ${!mobileMenu ? 'xs:hidden':'xs:block'} lg:block w-1/5 h-screen py-8 overflow-y-auto text-black scrollbar-none hover:scrollbar-thin scrollbar-thumb-slate-400 scrollbar-track-white scrollbar-thumb-rounded-xl`}>
 
       <Link to={"/"} className='flex justify-center items-center gap-3'>
         <ReactSVG src={Logo}/>

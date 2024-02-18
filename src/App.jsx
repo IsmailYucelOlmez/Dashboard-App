@@ -36,7 +36,7 @@ function App() {
 
       <Sidebar/>
 
-      <div className='w-4/5 bg-[#FAF7FF] h-screen overflow-y-auto scrollbar-thin scrollbar-thumb-slate-400 scrollbar-track-white scrollbar-thumb-rounded-xl'>
+      <div className='xs:w-full lg:w-4/5 bg-[#FAF7FF] h-screen overflow-y-auto scrollbar-thin scrollbar-thumb-slate-400 scrollbar-track-white scrollbar-thumb-rounded-xl'>
 
         <Navbar/>
 
