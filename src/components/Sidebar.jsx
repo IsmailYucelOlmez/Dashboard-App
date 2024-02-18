@@ -1,7 +1,6 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { ReactSVG } from 'react-svg'
-import Logo from '../assets/dashboard-logo.svg'
+import { LuLayoutDashboard } from "react-icons/lu";
 import { GiLouvrePyramid } from "react-icons/gi";
 import { BsKanban } from 'react-icons/bs';
 import { AiOutlineBarChart } from 'react-icons/ai';
@@ -23,42 +22,55 @@ const Sidebar = () => {
   const {setTheme}=useContext(DashboardContext);
   const {themeColor}=useContext(DashboardContext);
   const {setThemeColor}=useContext(DashboardContext);
+  //const settingsRef=useRef(false);
+  console.log(mobileMenu);
+  console.log(settings);
+  
+  const toggleMenu=()=>{
+    if(settings==true){
+         
+    }
+    else{
+      setMobileMenu(false)
+    }
+    
+  }
   
 
   return (
 
-    <div onClick={()=>setMobileMenu(false)} className={`${mobileMenu ? 'xs:w-full':'xs:w-0'} h-full xs:absolute lg:relative lg:w-1/5`}>
-    <div className={`bg-[#fff] ${!mobileMenu ? 'xs:hidden':'xs:block'} lg:block xs:w-1/2 md:w-1/3 lg:w-full z-20 xs:absolute top-0 left-0  h-screen py-8 overflow-y-auto text-black scrollbar-none hover:scrollbar-thin scrollbar-thumb-slate-400 scrollbar-track-white scrollbar-thumb-rounded-xl`}>
+    <div onClick={()=>toggleMenu()} className={`${(mobileMenu || settings) ? 'xs:w-full':'xs:w-0'} h-screen xs:absolute z-20 lg:relative lg:w-1/5`}>
+    <div className={`bg-[#fff] ${(mobileMenu || settings) ? 'xs:block':'xs:hidden'} lg:block xs:w-1/2 md:w-1/3 h-screen lg:w-full xs:absolute top-0 left-0 py-8 overflow-y-auto text-black scrollbar-none hover:scrollbar-thin scrollbar-thumb-slate-400 scrollbar-track-white scrollbar-thumb-rounded-xl`}>
 
       <Link to={"/"} className='flex justify-center items-center gap-3'>
-        <ReactSVG src={Logo}/>
-        <h1 className='text-xl font-bold'>Dashboard</h1>
+        <LuLayoutDashboard className='xs:text-3xl lg:text-5xl'/>
+        <h1 className='xs:text-lg md:text-xl font-bold'>Dashboard</h1>
       </Link>
       
     {!settings ? (
       <nav className='flex flex-col items-center gap-4 mt-10'>
 
-        <NavLink to={"/"} className={({ isActive }) => ` py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `text-xl font-semibold text-white bg-[${themeColor}] ` : 'text-lg hover:bg-slate-200'}`} ><i className='fa-solid fa-house'></i>Home</NavLink>
-        <NavLink to={"/customer"} className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `text-xl font-semibold text-white bg-[${themeColor}] ` : 'text-lg hover:bg-slate-200'}`} > <RiContactsLine /> Customer</NavLink>
-        <NavLink to={"/personel"} className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `text-xl font-semibold text-white bg-[${themeColor}] ` : 'text-lg hover:bg-slate-200'}`} > <IoMdContacts /> Employees</NavLink>
-        <NavLink to={"/product"} className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `text-xl font-semibold text-white bg-[${themeColor}] ` : 'text-lg hover:bg-slate-200'}`} > <FaProductHunt /> Product</NavLink>
-        <NavLink to={"/order"} className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `text-xl font-semibold text-white bg-[${themeColor}] ` : 'text-lg hover:bg-slate-200'}`} > <i className="fa-solid fa-cart-shopping"></i> Order</NavLink>
-        <NavLink to={"/calendar"} className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `text-xl font-semibold text-white bg-[${themeColor}] ` : 'text-lg hover:bg-slate-200'}`} > <i className="fa-solid fa-calendar"></i> Calendar</NavLink>
-        <NavLink to={"/kanban"} className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `text-xl font-semibold text-white bg-[${themeColor}] ` : 'text-lg hover:bg-slate-200'}`} > <BsKanban /> Kanban</NavLink>
-        <NavLink to={"/linegraphic"} className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `text-xl font-semibold text-white bg-[${themeColor}] ` : 'text-lg hover:bg-slate-200'}`} > <i className="fa-solid fa-chart-line"></i> Line</NavLink>
-        <NavLink to={"/piegraphic"} className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `text-xl font-semibold text-white bg-[${themeColor}] ` : 'text-lg hover:bg-slate-200'}`} > <i className="fa-solid fa-chart-pie"></i> Pie</NavLink>
-        <NavLink to={"/bargraphic"}className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `text-xl font-semibold text-white bg-[${themeColor}] ` : 'text-lg hover:bg-slate-200'}`} > <i className="fa-solid fa-chart-column"></i> Bar</NavLink>
-        <NavLink to={"/areachart"} className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `text-xl font-semibold text-white bg-[${themeColor}] ` : 'text-lg hover:bg-slate-200'}`} > <i className="fa-solid fa-chart-area"></i> Area</NavLink>
-        <NavLink to={"/financialchart"} className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `text-xl font-semibold text-white bg-[${themeColor}] ` : 'text-lg hover:bg-slate-200'}`} > <i className="fa-solid fa-coins"></i> Financial</NavLink>
-        <NavLink to={"/pyramidchart"} className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `text-xl font-semibold text-white bg-[${themeColor}] ` : 'text-lg hover:bg-slate-200'}`} > <GiLouvrePyramid /> Pyramid</NavLink>
-        <NavLink to={"/stackedchart"} className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `text-xl font-semibold text-white bg-[${themeColor}] ` : 'text-lg hover:bg-slate-200'}`} > <AiOutlineBarChart /> Stacked</NavLink>
-        <p onClick={()=>setSettings((prev)=>!prev)} className={`py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${settings ? `text-xl font-semibold text-white bg-[${themeColor}]`:"text-lg hover:bg-slate-200"}`}><i className="fa-solid fa-gear"></i> Settings</p>
+        <NavLink to={"/"} className={({ isActive }) => ` py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `xs:text-lg md:text-xl font-semibold text-white bg-[${themeColor}] ` : 'xs:text-base md:text-lg hover:bg-slate-200'}`} ><i className='fa-solid fa-house'></i>Home</NavLink>
+        <NavLink to={"/customer"} className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `xs:text-lg md:text-xl font-semibold text-white bg-[${themeColor}] ` : 'xs:text-base md:text-lg hover:bg-slate-200'}`} > <RiContactsLine /> Customer</NavLink>
+        <NavLink to={"/personel"} className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `xs:text-lg md:text-xl font-semibold text-white bg-[${themeColor}] ` : 'xs:text-base md:text-lg hover:bg-slate-200'}`} > <IoMdContacts /> Employees</NavLink>
+        <NavLink to={"/product"} className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `xs:text-lg md:text-xl font-semibold text-white bg-[${themeColor}] ` : 'xs:text-base md:text-lg hover:bg-slate-200'}`} > <FaProductHunt /> Product</NavLink>
+        <NavLink to={"/order"} className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `xs:text-lg md:text-xl font-semibold text-white bg-[${themeColor}] ` : 'xs:text-base md:text-lg hover:bg-slate-200'}`} > <i className="fa-solid fa-cart-shopping"></i> Order</NavLink>
+        <NavLink to={"/calendar"} className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `xs:text-lg md:text-xl font-semibold text-white bg-[${themeColor}] ` : 'xs:text-base md:text-lg hover:bg-slate-200'}`} > <i className="fa-solid fa-calendar"></i> Calendar</NavLink>
+        <NavLink to={"/kanban"} className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `xs:text-lg md:text-xl font-semibold text-white bg-[${themeColor}] ` : 'xs:text-base md:text-lg hover:bg-slate-200'}`} > <BsKanban /> Kanban</NavLink>
+        <NavLink to={"/linegraphic"} className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `xs:text-lg md:text-xl font-semibold text-white bg-[${themeColor}] ` : 'xs:text-base md:text-lg hover:bg-slate-200'}`} > <i className="fa-solid fa-chart-line"></i> Line</NavLink>
+        <NavLink to={"/piegraphic"} className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `xs:text-lg md:text-xl font-semibold text-white bg-[${themeColor}] ` : 'xs:text-base md:text-lg hover:bg-slate-200'}`} > <i className="fa-solid fa-chart-pie"></i> Pie</NavLink>
+        <NavLink to={"/bargraphic"}className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `xs:text-lg md:text-xl font-semibold text-white bg-[${themeColor}] ` : 'xs:text-base md:text-lg hover:bg-slate-200'}`} > <i className="fa-solid fa-chart-column"></i> Bar</NavLink>
+        <NavLink to={"/areachart"} className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `xs:text-lg md:text-xl font-semibold text-white bg-[${themeColor}] ` : 'xs:text-base md:text-lg hover:bg-slate-200'}`} > <i className="fa-solid fa-chart-area"></i> Area</NavLink>
+        <NavLink to={"/financialchart"} className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `xs:text-lg md:text-xl font-semibold text-white bg-[${themeColor}] ` : 'xs:text-base md:text-lg hover:bg-slate-200'}`} > <i className="fa-solid fa-coins"></i> Financial</NavLink>
+        <NavLink to={"/pyramidchart"} className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `xs:text-lg md:text-xl font-semibold text-white bg-[${themeColor}] ` : 'xs:text-base md:text-lg hover:bg-slate-200'}`} > <GiLouvrePyramid /> Pyramid</NavLink>
+        <NavLink to={"/stackedchart"} className={({ isActive }) => `py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${isActive ? `xs:text-lg md:text-xl font-semibold text-white bg-[${themeColor}] ` : 'xs:text-base md:text-lg hover:bg-slate-200'}`} > <AiOutlineBarChart /> Stacked</NavLink>
+        <p  onClick={()=>{setSettings(true); setMobileMenu(true);console.log("çalış");}} className={`py-1 w-3/4 text-center rounded-xl flex items-center justify-center gap-3 ${settings ? `xs:text-lg md:text-xl font-semibold text-white bg-[${themeColor}]`:"xs:text-base md:text-lg hover:bg-slate-200"}`}><i className="fa-solid fa-gear"></i> Settings</p>
 
         
       </nav>
 
     ):(
-      <div className='w-full mt-10 flex flex-col items-center justify-center'>
+      <div className='w-full h-screen mt-10 flex flex-col items-center lg:justify-center'>
 
         <div className='w-3/4 flex flex-col justify-center items-center gap-4'>
           <h3 className='text-lg font-semibold'>Theme Color</h3>

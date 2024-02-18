@@ -13,7 +13,7 @@ const CalendarPage = () => {
 
 
   return (
-    <div  className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
+    <div  className="m-2 md:m-10 xs:mt-8 lg:mt-24 p-2 pt-6 md:p-10 bg-white rounded-3xl">
       <header>
         <h1 className='mb-8 text-3xl font-extrabold'>Calendar</h1>
       </header>
@@ -26,7 +26,7 @@ const CalendarPage = () => {
         
       >
         <ViewsDirective>
-          { ['Day', 'Week', 'WorkWeek', 'Month', 'Agenda'].map((item) => <ViewDirective key={item} option={item} />)}
+          { ['Day', 'Week', 'WorkWeek', 'Month', 'Agenda'].map((element) => <ViewDirective key={element} option={element} />)}
         </ViewsDirective>
         <Inject services={[Day, Week, WorkWeek, Month, Agenda, Resize, DragAndDrop]} />
       </ScheduleComponent>

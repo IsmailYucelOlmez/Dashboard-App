@@ -21,7 +21,6 @@ import Navbar from './components/Navbar'
 
 function App() {
 
-  //white logo (react icon avaliable)
   //dropdown
   //product page
   //dark theme
