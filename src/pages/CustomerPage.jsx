@@ -24,6 +24,7 @@ const CustomerPage = () => {
       toolbar={toolbarOptions}
       editSettings={editing}
       allowSorting
+      
     >
       <ColumnsDirective>
         

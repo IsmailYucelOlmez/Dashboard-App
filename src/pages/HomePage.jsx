@@ -23,8 +23,8 @@ const HomePage = () => {
         </div>
 
         <div className='mx-7 '>
-          <div className={`w-9 h-9 rounded-full bg-[${themeColor}]`}>
-
+          <div className={`w-10 h-10 rounded-full bg-[${themeColor}] flex justify-center items-center text-white`}>
+            <i class="fa-solid fa-dollar-sign text-lg"></i>
           </div>
 
         </div>
@@ -60,7 +60,7 @@ const HomePage = () => {
           <h5 className='font-semibold text-xl'>Revenue Updates</h5>
           
           <div className='flex xs:flex-col md:flex-row gap-3'>
-            <p className="flex items-center gap-2 text-gray-600 dark:text-white">
+            <p className="flex items-center gap-2 text-gray-600 dark:text-slate-200">
               <span>
                 <GoDotFill />
               </span>

@@ -9,7 +9,7 @@ const OrderPage = () => {
 
 
   return (
-    <div  className="m-2 md:m-10 xs:mt-8 lg:mt-16 p-2 pt-6 md:p-10 bg-white rounded-3xl">
+    <div  className="m-2 md:m-10 xs:mt-8 lg:mt-16 p-2 pt-6 md:p-10 bg-white dark:bg-slate-600 dark:text-white rounded-3xl">
 
       <header className='mb-8'>
         <h1 className='text-3xl font-extrabold'>Orders</h1>
