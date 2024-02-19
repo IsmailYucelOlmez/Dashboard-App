@@ -17,6 +17,8 @@ import StackedChartPage from './pages/StackedChartPage'
 import Footer from './components/Footer'
 import Sidebar from './components/Sidebar'
 import Navbar from './components/Navbar'
+import { useContext } from 'react'
+import { DashboardContext } from './context/DashboardContext'
 
 
 function App() {
@@ -24,19 +26,21 @@ function App() {
   //dropdown
   //product page
   //dark theme
-  //local storage for dark theme and theme color 
-  //responsive design  
+  //local storage for dark theme and theme color   
   //code review
+  //footer
+
+  const {theme}=useContext(DashboardContext);
 
 
   return (
-    <div className=" flex ">
+    <div className={`flex ${theme=="dark" ? 'dark':''} `} >
 
      
 
       <Sidebar />
 
-      <div className='xs:w-full lg:w-4/5 bg-[#FAF7FF] h-screen overflow-y-auto scrollbar-thin scrollbar-thumb-slate-400 scrollbar-track-white scrollbar-thumb-rounded-xl'>
+      <div className='xs:w-full lg:w-4/5 bg-[#FAF7FF] dark:bg-slate-800 dark:text-white h-screen overflow-y-auto scrollbar-thin scrollbar-thumb-slate-400 dark:scrollbar-thumb-white scrollbar-track-white dark:scrollbar-track-slate-800 scrollbar-thumb-rounded-xl'>
 
         <Navbar/>
 

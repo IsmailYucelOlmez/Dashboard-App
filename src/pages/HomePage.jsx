@@ -13,7 +13,7 @@ const HomePage = () => {
   return (
     <div className='xs:my-10 lg:my-12 xs:mx-5 md:mx-8 lg:mx-10 '>
       
-      <div className='bg-white w-full h-44 border border-black rounded-xl bg-no-repeat bg-hero-banner md:bg-cover bg-center flex justify-between items-center'>
+      <div className='bg-white dark:bg-slate-800 dark:border-white w-full h-44 border border-black rounded-xl bg-no-repeat bg-hero-banner md:bg-cover bg-center flex justify-between items-center'>
         
         <div className='xs:mx-2 lg:mx-7 text-center'>
           <h3 className='xs:text-sm lg:text-base'>Earnings</h3>
@@ -31,7 +31,7 @@ const HomePage = () => {
 
       </div>
 
-      <div className='w-full bg-white xs:my-8 lg:my-10 lg:h-44 border border-black rounded-xl flex justify-between xs:flex-wrap md:flex-nowrap'>
+      <div className='w-full bg-white dark:bg-slate-800 dark:border-white xs:my-8 lg:my-10 lg:h-44 border border-black rounded-xl flex justify-between xs:flex-wrap md:flex-nowrap'>
 
       {earningData.map((element)=>(
 
@@ -60,7 +60,7 @@ const HomePage = () => {
           <h5 className='font-semibold text-xl'>Revenue Updates</h5>
           
           <div className='flex xs:flex-col md:flex-row gap-3'>
-            <p className="flex items-center gap-2 text-gray-600 ">
+            <p className="flex items-center gap-2 text-gray-600 dark:text-white">
               <span>
                 <GoDotFill />
               </span>
