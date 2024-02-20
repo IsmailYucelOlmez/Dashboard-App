@@ -17,7 +17,7 @@ import StackedChartPage from './pages/StackedChartPage'
 import Footer from './components/Footer'
 import Sidebar from './components/Sidebar'
 import Navbar from './components/Navbar'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { DashboardContext } from './context/DashboardContext'
 
 
@@ -28,6 +28,15 @@ function App() {
   //code review
 
   const {theme}=useContext(DashboardContext);
+  const {setTheme}=useContext(DashboardContext);
+  const {getTheme}=useContext(DashboardContext);
+  const {setThemeColor}=useContext(DashboardContext);
+  const {getThemeColor}=useContext(DashboardContext);
+
+  useEffect(()=>{
+    setTheme(getTheme());
+    setThemeColor(getThemeColor());
+  },[])
 
 
   return (

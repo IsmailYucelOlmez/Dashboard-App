@@ -20,8 +20,11 @@ const Sidebar = () => {
   const {setMobileMenu}=useContext(DashboardContext);
   const {theme}=useContext(DashboardContext);
   const {setTheme}=useContext(DashboardContext);
+  const {updateTheme}=useContext(DashboardContext);
   const {themeColor}=useContext(DashboardContext);
   const {setThemeColor}=useContext(DashboardContext);
+  const {updateThemeColor}=useContext(DashboardContext);
+
   
   const toggleMenu=()=>{
     if(settings==true){
@@ -30,7 +33,18 @@ const Sidebar = () => {
     else{
       setMobileMenu(false)
     }
-    
+  }
+
+  const changeTheme=(value)=>{
+
+    setTheme(value);
+    updateTheme(value);
+  }
+
+  const changeThemeColor=(value)=>{
+
+    setThemeColor(value);
+    updateThemeColor(value);
   }
   
 
@@ -73,13 +87,13 @@ const Sidebar = () => {
           <h3 className='text-lg font-semibold'>Theme Color</h3>
 
           
-          <div onClick={()=>setThemeColor("#e63946")} className="border border-black dark:border-white flex justify-center items-center text-white text-xs rounded-full w-6 h-6 bg-[#e63946]">{themeColor=="#e63946" && (<i className='fa-solid fa-check'></i>)}</div>
-          <div onClick={()=>setThemeColor("#457b9d")} className="border border-black dark:border-white flex justify-center items-center text-white text-xs rounded-full w-6 h-6 bg-[#457b9d]">{themeColor=="#457b9d" && (<i className='fa-solid fa-check'></i>)}</div>
-          <div onClick={()=>setThemeColor("#00BCD4")} className="border border-black dark:border-white flex justify-center items-center text-white text-xs rounded-full w-6 h-6 bg-[#00BCD4]">{themeColor=="#00BCD4" && (<i className='fa-solid fa-check'></i>)}</div>
-          <div onClick={()=>setThemeColor("#fca311")} className="border border-black dark:border-white flex justify-center items-center text-white text-xs rounded-full w-6 h-6 bg-[#fca311]">{themeColor=="#fca311" && (<i className='fa-solid fa-check'></i>)}</div>
-          <div onClick={()=>setThemeColor("#6a994e")} className="border border-black dark:border-white flex justify-center items-center text-white text-xs rounded-full w-6 h-6 bg-[#6a994e]">{themeColor=="#6a994e" && (<i className='fa-solid fa-check'></i>)}</div>
-          <div onClick={()=>setThemeColor("#e07a5f")} className="border border-black dark:border-white flex justify-center items-center text-white text-xs rounded-full w-6 h-6 bg-[#e07a5f]">{themeColor=="#e07a5f" && (<i className='fa-solid fa-check'></i>)}</div>
-          <div onClick={()=>setThemeColor("#7209b7")} className="border border-black dark:border-white flex justify-center items-center text-white text-xs rounded-full w-6 h-6 bg-[#7209b7]">{themeColor=="#7209b7" && (<i className='fa-solid fa-check'></i>)}</div>
+          <div onClick={()=>changeThemeColor("#e63946")} className="border border-black dark:border-white flex justify-center items-center text-white text-xs rounded-full w-6 h-6 bg-[#e63946]">{themeColor=="#e63946" && (<i className='fa-solid fa-check'></i>)}</div>
+          <div onClick={()=>changeThemeColor("#457b9d")} className="border border-black dark:border-white flex justify-center items-center text-white text-xs rounded-full w-6 h-6 bg-[#457b9d]">{themeColor=="#457b9d" && (<i className='fa-solid fa-check'></i>)}</div>
+          <div onClick={()=>changeThemeColor("#00BCD4")} className="border border-black dark:border-white flex justify-center items-center text-white text-xs rounded-full w-6 h-6 bg-[#00BCD4]">{themeColor=="#00BCD4" && (<i className='fa-solid fa-check'></i>)}</div>
+          <div onClick={()=>changeThemeColor("#fca311")} className="border border-black dark:border-white flex justify-center items-center text-white text-xs rounded-full w-6 h-6 bg-[#fca311]">{themeColor=="#fca311" && (<i className='fa-solid fa-check'></i>)}</div>
+          <div onClick={()=>changeThemeColor("#6a994e")} className="border border-black dark:border-white flex justify-center items-center text-white text-xs rounded-full w-6 h-6 bg-[#6a994e]">{themeColor=="#6a994e" && (<i className='fa-solid fa-check'></i>)}</div>
+          <div onClick={()=>changeThemeColor("#e07a5f")} className="border border-black dark:border-white flex justify-center items-center text-white text-xs rounded-full w-6 h-6 bg-[#e07a5f]">{themeColor=="#e07a5f" && (<i className='fa-solid fa-check'></i>)}</div>
+          <div onClick={()=>changeThemeColor("#7209b7")} className="border border-black dark:border-white flex justify-center items-center text-white text-xs rounded-full w-6 h-6 bg-[#7209b7]">{themeColor=="#7209b7" && (<i className='fa-solid fa-check'></i>)}</div>
           
 
         </div>
@@ -88,9 +102,9 @@ const Sidebar = () => {
           <h3 className='text-lg font-semibold'>Theme</h3>
 
           {theme=="light" ? (
-            <MdSunny className='w-6 h-6' onClick={()=>setTheme("dark")}/>
+            <MdSunny className='w-6 h-6' onClick={()=>changeTheme("dark")}/>
           ):(
-            <FaMoon className='w-6 h-6 ' onClick={()=>setTheme("light")}/>
+            <FaMoon className='w-6 h-6 ' onClick={()=>changeTheme("light")}/>
           )}
 
         </div>
@@ -100,15 +114,6 @@ const Sidebar = () => {
       </div>
     )}
 
-    {mobileMenu && (
-      <div className='absolute xs:block lg:hidden w-full h-screen'>
-
-        <nav className='w-1/3 h-full'>
-
-        </nav>
-
-      </div>
-    )}
       
     </div>
     </div>
