@@ -18,7 +18,7 @@ const Navbar = () => {
   
 
   return (
-    <div className='flex justify-between xs:px-3 md:px-8 lg:px-10 items-center border-b-2 border-black h-16 relative'>
+    <div className='flex justify-between xs:px-3 md:px-8 lg:px-10 items-center border-b-2 border-black dark:border-white h-16 relative'>
 
       <div className='flex items-center xs:gap-2 lg:gap-5'>
         <i onClick={()=>setMobileMenu((prev)=>!prev)} className={`xs:block lg:hidden text-lg fa-solid ${!mobileMenu ? 'fa-bars' :'fa-x'}`}></i>
@@ -50,7 +50,7 @@ const Navbar = () => {
         <div className='flex items-center gap-2'>
           <Image src={Avatar} className={"xs:w-9 md:w-11 xs:h-9 md:h-11 rounded-full"}/>
           <p className='font-semibold xs:hidden md:block'>Micheal</p>
-          <i onClick={()=>{activeMenu=="profile" ? setActiveMenu(""):setActiveMenu("profile")}} className="fa-solid fa-chevron-down"></i>
+          <i onClick={()=>{activeMenu=="profile" ? setActiveMenu(""):setActiveMenu("profile")}} className={`fa-solid ${activeMenu=="profile" ? 'fa-chevron-up':'fa-chevron-down'} `}></i>
         </div>
 
         {activeMenu=="shop" &&(
@@ -58,7 +58,7 @@ const Navbar = () => {
         )}
 
         {activeMenu=="notification" && (
-          <Notification/>
+          <Notification setActiveMenu={setActiveMenu}/>
         )}
 
         {activeMenu=="message" && (
@@ -66,7 +66,7 @@ const Navbar = () => {
         )}
 
         {activeMenu=="profile" && (
-          <UserProfile/>
+          <UserProfile setActiveMenu={setActiveMenu}/>
         )}
         
 

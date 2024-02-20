@@ -7,8 +7,10 @@ export default {
   darkMode:'class',
   theme: {
     extend: {
-      width: {
-        
+      inset:{
+        '88':'22rem',
+        '76':'19rem'
+
       },
       backgroundImage:{
         'hero-banner':"url('/src/assets/dashboard-hero-section.svg')",

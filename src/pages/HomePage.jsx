@@ -22,7 +22,7 @@ const HomePage = () => {
 
         </div>
 
-        <div className='mx-7 '>
+        <div className='xs:mx-3 md:mx-5 lg:mx-7 '>
           <div className={`w-10 h-10 rounded-full bg-[${themeColor}] flex justify-center items-center text-white`}>
             <i class="fa-solid fa-dollar-sign text-lg"></i>
           </div>

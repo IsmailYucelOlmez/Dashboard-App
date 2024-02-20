@@ -25,7 +25,6 @@ function App() {
 
   //dropdown
   //product page
-  //dark theme
   //local storage for dark theme and theme color   
   //code review
   //footer
