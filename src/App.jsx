@@ -23,11 +23,9 @@ import { DashboardContext } from './context/DashboardContext'
 
 function App() {
 
-  //dropdown
   //product page
   //local storage for dark theme and theme color   
   //code review
-  //footer
 
   const {theme}=useContext(DashboardContext);
 
