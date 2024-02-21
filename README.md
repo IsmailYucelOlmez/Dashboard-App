@@ -1,8 +1,26 @@
-# React + Vite
+# Dashboard App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## This project created via **React** and **Vite**
 
-Currently, two official plugins are available:
+Dashboard App includes datatables and variety charts
+Dashboard App includes kanban and calendar
+[Syncfusion Component Library](https://ej2.syncfusion.com/home/) was used in this project 
+Tailwind CSS, Tailwind Scrollbar, Lazy Load Image used in this project
+Material UI was used in this project for some icons
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+###Datatable Types
+-Customer
+-Order
+-Product
+-Employee
+
+###Chart Types
+-Area
+-Bar
+-Financial
+-Line
+-Pie
+-Pyramid
+-Stacked
+
+
