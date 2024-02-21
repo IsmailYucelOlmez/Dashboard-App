@@ -12,13 +12,13 @@ Tailwind CSS, Tailwind Scrollbar, Lazy Load Image used in this project
 
 Material UI was used in this project for some icons
 
-###Datatable Types
+### Datatable Types
 - Customer
 - Order
 - Product
 - Employee
 
-###Chart Types
+### Chart Types
 - Area
 - Bar
 - Financial
