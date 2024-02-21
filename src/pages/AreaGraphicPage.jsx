@@ -6,21 +6,17 @@ import { areaCustomSeries, areaPrimaryXAxis, areaPrimaryYAxis } from '../../data
 const AreaGraphicPage = () => {
   return (
     <div className="m-4 md:m-10 xs:mt-8 lg:mt-16 p-6 bg-white dark:bg-slate-600 dark:text-white rounded-3xl">
+
       <header className='mb-8'>
         <h1 className='text-3xl font-extrabold'>Area Chart</h1>
       </header>
 
-      <ChartComponent
-          id="charts"
-          primaryXAxis={areaPrimaryXAxis}
-          primaryYAxis={areaPrimaryYAxis}
-          chartArea={{ border: { width: 0 } }}
-          // background={currentMode === 'Dark' ? '#33373E' : '#fff'}
-          legendSettings={{ background: 'white' }}
-        >
+      <ChartComponent id="charts" primaryXAxis={areaPrimaryXAxis} primaryYAxis={areaPrimaryYAxis} chartArea={{ border: { width: 0 } }}
+                      legendSettings={{ background: 'white' }}>
+
           <Inject services={[SplineAreaSeries, DateTime, Legend]} />
-          <SeriesCollectionDirective>
-            
+
+          <SeriesCollectionDirective>   
             {areaCustomSeries.map((element, i) => <SeriesDirective key={i} {...element} />)}
           </SeriesCollectionDirective>
         </ChartComponent>

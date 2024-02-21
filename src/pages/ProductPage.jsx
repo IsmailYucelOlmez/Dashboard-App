@@ -1,9 +1,14 @@
-import React from 'react'
+import React ,{useEffect} from 'react'
 import { GridComponent, ColumnsDirective, ColumnDirective, Resize, Sort, ContextMenu, Filter, Page, ExcelExport, PdfExport, Edit, Inject } from '@syncfusion/ej2-react-grids';
 import { productData, contextMenuItems, productsGrid } from '../../data/dummy';
 
 
 const ProductPage = () => {
+
+  useEffect(()=>{
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  },[])
 
   const editing = { allowDeleting: true, allowEditing: true };
 
@@ -15,16 +20,9 @@ const ProductPage = () => {
         <h1 className='text-3xl font-extrabold'>Product</h1>
       </header>
 
-      <GridComponent
-        id="gridcomp"
-        dataSource={productData}
-        allowPaging={true} 
-        allowSorting={true}
-        allowExcelExport={true}
-        allowPdfExport={true}
-        contextMenuItems={contextMenuItems}
-        editSettings={editing}
-      >
+      <GridComponent id="gridcomp" dataSource={productData} allowPaging={true}  allowSorting={true} allowExcelExport={true} allowPdfExport={true}
+                     contextMenuItems={contextMenuItems} editSettings={editing}>
+
         <ColumnsDirective>
           {productsGrid.map((element, i) => <ColumnDirective key={i} {...element} />)}
         </ColumnsDirective>

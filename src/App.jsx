@@ -23,9 +23,6 @@ import { DashboardContext } from './context/DashboardContext'
 
 function App() {
 
-  //product page
-  //code review
-
   const {theme}=useContext(DashboardContext);
   const {setTheme}=useContext(DashboardContext);
   const {getTheme}=useContext(DashboardContext);
@@ -35,13 +32,12 @@ function App() {
   useEffect(()=>{
     setTheme(getTheme());
     setThemeColor(getThemeColor());
+
   },[])
 
 
   return (
     <div className={`flex ${theme=="dark" ? 'dark':''} `} >
-
-     
 
       <Sidebar />
 
@@ -66,14 +62,11 @@ function App() {
         <Route path="/pyramidchart" element={<PyramidChartPage/>}/>
         <Route path="/stackedchart" element={<StackedChartPage/>}/>
 
-
       </Routes>
 
         <Footer/>
       
       </div>
-
-     
 
     </div>
   )

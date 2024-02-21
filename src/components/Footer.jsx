@@ -9,10 +9,10 @@ const Footer = () => {
       </div>
 
       <div className='flex gap-2 md:gap-4'>
-        <i class="fa-brands fa-facebook hover:text-blue-600 text-lg md:text-xl"></i>
-        <i class="fa-brands fa-twitter hover:text-cyan-500 text-lg md:text-xl"></i>
-        <i class="fa-brands fa-instagram hover:text-purple-500 text-lg md:text-xl"></i>
-        <i class="fa-brands fa-linkedin hover:text-blue-500 text-lg md:text-xl"></i>
+        <i className="fa-brands fa-facebook hover:text-blue-600 text-lg md:text-xl"></i>
+        <i className="fa-brands fa-twitter hover:text-cyan-500 text-lg md:text-xl"></i>
+        <i className="fa-brands fa-instagram hover:text-purple-500 text-lg md:text-xl"></i>
+        <i className="fa-brands fa-linkedin hover:text-blue-500 text-lg md:text-xl"></i>
       </div>
     </div>
   )

@@ -6,13 +6,16 @@ import { lineCustomSeries, LinePrimaryXAxis, LinePrimaryYAxis } from '../../data
 const LineGraphicPage = () => {
   return (
     <div className="m-4 md:m-10 xs:mt-8 lg:mt-16 p-6 bg-white dark:bg-slate-600 dark:text-white rounded-3xl">
+
       <header className='mb-8'>
         <h1 className='text-3xl font-extrabold'>Line Chart</h1>
       </header>
 
       <ChartComponent id="line-chart" height="420px" primaryXAxis={LinePrimaryXAxis} primaryYAxis={LinePrimaryYAxis} chartArea={{ border: { width: 0 } }} tooltip={{ enable: true }} /*background={currentMode === 'Dark' ? '#33373E' : '#fff'}*/ legendSettings={{ background: 'white' }}>
+      
       <Inject services={[LineSeries, DateTime, Legend, Tooltip]} />
       <SeriesCollectionDirective>
+        
         {lineCustomSeries.map((item, index) => <SeriesDirective key={index} {...item} />)}
       </SeriesCollectionDirective>
     </ChartComponent>

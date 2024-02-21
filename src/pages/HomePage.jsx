@@ -1,6 +1,6 @@
-import React,{ useContext } from 'react'
+import React,{ useContext, useEffect } from 'react'
 import { DashboardContext } from '../context/DashboardContext';
-import { earningData, medicalproBranding, recentTransactions, weeklyStats, dropdownData, SparklineAreaData, ecomPieChartData } from '../../data/dummy.jsx';
+import { earningData, SparklineAreaData } from '../../data/dummy.jsx';
 import { GoDotFill } from "react-icons/go";
 import SparkLine from '../components/charts/SparkLine.jsx';
 import Stacked from '../components/charts/Stacked.jsx';
@@ -8,6 +8,11 @@ import Stacked from '../components/charts/Stacked.jsx';
 const HomePage = () => {
 
   const {themeColor}=useContext(DashboardContext);
+
+  useEffect(()=>{
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  },[])
 
 
   return (
@@ -24,7 +29,7 @@ const HomePage = () => {
 
         <div className='xs:mx-3 md:mx-5 lg:mx-7 '>
           <div className={`w-10 h-10 rounded-full bg-[${themeColor}] flex justify-center items-center text-white`}>
-            <i class="fa-solid fa-dollar-sign text-lg"></i>
+            <i className="fa-solid fa-dollar-sign text-lg"></i>
           </div>
 
         </div>
