@@ -22,6 +22,7 @@ import product5 from './product5.jpg';
 import product6 from './product6.jpg';
 import product7 from './product7.jpg';
 import product8 from './product8.jpg';
+import product9 from './product9.jpg';
 
 export const gridOrderImage = (props) => (
   <div>
@@ -918,6 +919,38 @@ export const ordersGrid = [
     textAlign: 'Center',
   },
 ];
+
+export const productsGrid=[
+  {
+    headerText: 'Image',
+    template: gridOrderImage,
+    textAlign: 'Center',
+    width: '120',
+  },{
+    field: 'ProductItems',
+    headerText: 'Item',
+    width: '150',
+    editType: 'dropdownedit',
+    textAlign: 'Center',
+  },{
+    field: 'UnitPrice',
+    headerText: 'Unit Price',
+    format: 'C2',
+    textAlign: 'Center',
+    editType: 'numericedit',
+    width: '150',
+  },{
+    field: 'StockAmount',
+    headerText: 'Stock Amount',
+    width: '120',
+    textAlign: 'Center',
+  },{
+    field: 'ProductID',
+    headerText: 'Product ID',
+    width: '120',
+    textAlign: 'Center',
+  }
+]
 
 export const customersData = [
   {
@@ -2120,6 +2153,65 @@ export const employeesData = [
       avatar2,
   },
 ];
+
+export const productData=[
+  {
+    ProductID:'0001',
+    UnitPrice:23.99,
+    ProductItems: 'Fresh Tomato',
+    ProductImage: product6,
+    StockAmount: 950,
+
+  },{
+    ProductID:'0002',
+    UnitPrice:1.99,
+    ProductItems: 'Butter Scotch',
+    ProductImage: product5,
+    StockAmount: 350,
+  },{
+    ProductID:'0003',
+    UnitPrice:1.49,
+    ProductItems: 'Candy Gucci',
+    ProductImage: product7,
+    StockAmount: 100,
+  },{
+    ProductID:'0004',
+    UnitPrice:49.99,
+    ProductItems: 'Sneakers',
+    ProductImage: product4,
+    StockAmount: 50,
+  },{
+    ProductID:'0005',
+    UnitPrice:119.99,
+    ProductItems: 'Smart Watch',
+    ProductImage: product3,
+    StockAmount: 29,
+  },{
+    ProductID:'0006',
+    UnitPrice:19.99,
+    ProductItems: 'Sunglasses',
+    ProductImage: product2,
+    StockAmount: 40,
+  },{
+    ProductID:'0007',
+    UnitPrice:1.99,
+    ProductItems: 'Healthcare Erbology',
+    ProductImage: product1,
+    StockAmount: 350,
+  },{
+    ProductID:'0008',
+    UnitPrice:1.99,
+    ProductItems: 'Butter Scotch',
+    ProductImage: product8,
+    StockAmount: 350,
+  },{
+    ProductID:'0009',
+    UnitPrice:1.99,
+    ProductItems: 'Butter Scotch',
+    ProductImage: product9,
+    StockAmount: 350,
+  }
+]
 
 export const ordersData = [
   {
