@@ -1,5 +1,7 @@
 # Dashboard App
 
+## [Live](https://dashboard-app-rho-two.vercel.app/)
+
 ## This project created via **React** and **Vite**
 
 Dashboard App includes datatables and variety charts
